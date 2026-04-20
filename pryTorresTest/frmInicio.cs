@@ -16,5 +16,11 @@ namespace pryTorresTest
         {
             InitializeComponent();
         }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            frmCargaProducto ventanaProducto = new frmCargaProducto();
+            ventanaProducto.ShowDialog();
+        }
     }
 }
