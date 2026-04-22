@@ -251,6 +251,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCargaProducto";
             this.Text = "Carga Producto";
+            this.Load += new System.EventHandler(this.frmCargaProducto_Load_1);
             this.gbProductos.ResumeLayout(false);
             this.gbProductos.PerformLayout();
             this.gbDos.ResumeLayout(false);

@@ -79,9 +79,17 @@ namespace pryTorresTest
 
         private void btnSiguiente1_Click(object sender, EventArgs e)
         {
-           
-                
+            
+            if (gbListaProductos.Items.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos un producto.");
+                tbNombre1.Focus();
+                return;
             }
+
+            
+            gbDos.Visible = true;
+        }
         
 
         private void btnSiguienteDos_Click(object sender, EventArgs e)
@@ -95,6 +103,11 @@ namespace pryTorresTest
         }
 
         private void gbListaProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCargaProducto_Load_1(object sender, EventArgs e)
         {
 
         }
