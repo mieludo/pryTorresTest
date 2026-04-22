@@ -48,18 +48,19 @@
             // 
             this.pbLista.Image = ((System.Drawing.Image)(resources.GetObject("pbLista.Image")));
             this.pbLista.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbLista.InitialImage")));
-            this.pbLista.Location = new System.Drawing.Point(12, 12);
+            this.pbLista.Location = new System.Drawing.Point(-33, -24);
             this.pbLista.Name = "pbLista";
-            this.pbLista.Size = new System.Drawing.Size(253, 319);
+            this.pbLista.Size = new System.Drawing.Size(351, 355);
             this.pbLista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLista.TabIndex = 1;
             this.pbLista.TabStop = false;
+            this.pbLista.Click += new System.EventHandler(this.pbLista_Click);
             // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(284, 414);
             this.Controls.Add(this.pbLista);
             this.Controls.Add(this.btnIniciar);
@@ -67,6 +68,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             ((System.ComponentModel.ISupportInitialize)(this.pbLista)).EndInit();
             this.ResumeLayout(false);

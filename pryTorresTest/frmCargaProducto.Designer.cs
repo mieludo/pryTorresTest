@@ -37,20 +37,20 @@
             this.btnRegistrar1 = new System.Windows.Forms.Button();
             this.gbProductos = new System.Windows.Forms.GroupBox();
             this.gbDos = new System.Windows.Forms.GroupBox();
-            this.lblProducto = new System.Windows.Forms.Label();
-            this.cbProductos = new System.Windows.Forms.ComboBox();
-            this.gbTipo = new System.Windows.Forms.GroupBox();
-            this.cbRepuesto = new System.Windows.Forms.CheckBox();
-            this.cbEquipo = new System.Windows.Forms.CheckBox();
-            this.gbAdicional = new System.Windows.Forms.GroupBox();
-            this.cbInstalacion = new System.Windows.Forms.CheckBox();
-            this.cbEnvio = new System.Windows.Forms.CheckBox();
-            this.cbGarantia = new System.Windows.Forms.CheckBox();
             this.btnSiguienteDos = new System.Windows.Forms.Button();
+            this.gbAdicional = new System.Windows.Forms.GroupBox();
+            this.cbGarantia = new System.Windows.Forms.CheckBox();
+            this.cbEnvio = new System.Windows.Forms.CheckBox();
+            this.cbInstalacion = new System.Windows.Forms.CheckBox();
+            this.gbTipo = new System.Windows.Forms.GroupBox();
+            this.cbEquipo = new System.Windows.Forms.CheckBox();
+            this.cbRepuesto = new System.Windows.Forms.CheckBox();
+            this.cbProductos = new System.Windows.Forms.ComboBox();
+            this.lblProducto = new System.Windows.Forms.Label();
             this.gbProductos.SuspendLayout();
             this.gbDos.SuspendLayout();
-            this.gbTipo.SuspendLayout();
             this.gbAdicional.SuspendLayout();
+            this.gbTipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombreUno
@@ -78,16 +78,19 @@
             this.btnSiguiente1.Location = new System.Drawing.Point(141, 149);
             this.btnSiguiente1.Name = "btnSiguiente1";
             this.btnSiguiente1.Size = new System.Drawing.Size(128, 23);
-            this.btnSiguiente1.TabIndex = 2;
+            this.btnSiguiente1.TabIndex = 3;
             this.btnSiguiente1.Text = "Siguiente";
             this.btnSiguiente1.UseVisualStyleBackColor = true;
+            this.btnSiguiente1.Click += new System.EventHandler(this.btnSiguiente1_Click);
             // 
             // tbNombre1
             // 
             this.tbNombre1.Location = new System.Drawing.Point(141, 28);
             this.tbNombre1.Name = "tbNombre1";
             this.tbNombre1.Size = new System.Drawing.Size(128, 20);
-            this.tbNombre1.TabIndex = 3;
+            this.tbNombre1.TabIndex = 0;
+            this.tbNombre1.TextChanged += new System.EventHandler(this.tbNombre1_TextChanged_1);
+            this.tbNombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNombre1_KeyPress);
             // 
             // gbListaProductos
             // 
@@ -95,16 +98,18 @@
             this.gbListaProductos.Location = new System.Drawing.Point(141, 112);
             this.gbListaProductos.Name = "gbListaProductos";
             this.gbListaProductos.Size = new System.Drawing.Size(128, 21);
-            this.gbListaProductos.TabIndex = 4;
+            this.gbListaProductos.TabIndex = 2;
+            this.gbListaProductos.SelectedIndexChanged += new System.EventHandler(this.gbListaProductos_SelectedIndexChanged);
             // 
             // btnRegistrar1
             // 
             this.btnRegistrar1.Location = new System.Drawing.Point(141, 69);
             this.btnRegistrar1.Name = "btnRegistrar1";
             this.btnRegistrar1.Size = new System.Drawing.Size(128, 22);
-            this.btnRegistrar1.TabIndex = 5;
+            this.btnRegistrar1.TabIndex = 1;
             this.btnRegistrar1.Text = "Registrar";
             this.btnRegistrar1.UseVisualStyleBackColor = true;
+            this.btnRegistrar1.Click += new System.EventHandler(this.btnRegistrar1_Click);
             // 
             // gbProductos
             // 
@@ -133,56 +138,17 @@
             this.gbDos.Size = new System.Drawing.Size(310, 303);
             this.gbDos.TabIndex = 6;
             this.gbDos.TabStop = false;
+            this.gbDos.Visible = false;
             // 
-            // lblProducto
+            // btnSiguienteDos
             // 
-            this.lblProducto.AutoSize = true;
-            this.lblProducto.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(28, 30);
-            this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(68, 20);
-            this.lblProducto.TabIndex = 0;
-            this.lblProducto.Text = "Producto";
-            // 
-            // cbProductos
-            // 
-            this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Location = new System.Drawing.Point(141, 28);
-            this.cbProductos.Name = "cbProductos";
-            this.cbProductos.Size = new System.Drawing.Size(128, 21);
-            this.cbProductos.TabIndex = 1;
-            // 
-            // gbTipo
-            // 
-            this.gbTipo.Controls.Add(this.cbEquipo);
-            this.gbTipo.Controls.Add(this.cbRepuesto);
-            this.gbTipo.Location = new System.Drawing.Point(32, 77);
-            this.gbTipo.Name = "gbTipo";
-            this.gbTipo.Size = new System.Drawing.Size(237, 52);
-            this.gbTipo.TabIndex = 2;
-            this.gbTipo.TabStop = false;
-            this.gbTipo.Text = "Tipo";
-            // 
-            // cbRepuesto
-            // 
-            this.cbRepuesto.AutoSize = true;
-            this.cbRepuesto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbRepuesto.Location = new System.Drawing.Point(26, 20);
-            this.cbRepuesto.Name = "cbRepuesto";
-            this.cbRepuesto.Size = new System.Drawing.Size(72, 17);
-            this.cbRepuesto.TabIndex = 0;
-            this.cbRepuesto.Text = "Repuesto";
-            this.cbRepuesto.UseVisualStyleBackColor = true;
-            // 
-            // cbEquipo
-            // 
-            this.cbEquipo.AutoSize = true;
-            this.cbEquipo.Location = new System.Drawing.Point(122, 20);
-            this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(59, 17);
-            this.cbEquipo.TabIndex = 1;
-            this.cbEquipo.Text = "Equipo";
-            this.cbEquipo.UseVisualStyleBackColor = true;
+            this.btnSiguienteDos.Location = new System.Drawing.Point(76, 257);
+            this.btnSiguienteDos.Name = "btnSiguienteDos";
+            this.btnSiguienteDos.Size = new System.Drawing.Size(158, 23);
+            this.btnSiguienteDos.TabIndex = 0;
+            this.btnSiguienteDos.Text = "Siguiente";
+            this.btnSiguienteDos.UseVisualStyleBackColor = true;
+            this.btnSiguienteDos.Click += new System.EventHandler(this.btnSiguienteDos_Click);
             // 
             // gbAdicional
             // 
@@ -196,15 +162,15 @@
             this.gbAdicional.TabStop = false;
             this.gbAdicional.Text = "Adicional";
             // 
-            // cbInstalacion
+            // cbGarantia
             // 
-            this.cbInstalacion.AutoSize = true;
-            this.cbInstalacion.Location = new System.Drawing.Point(26, 35);
-            this.cbInstalacion.Name = "cbInstalacion";
-            this.cbInstalacion.Size = new System.Drawing.Size(77, 17);
-            this.cbInstalacion.TabIndex = 0;
-            this.cbInstalacion.Text = "Instalación";
-            this.cbInstalacion.UseVisualStyleBackColor = true;
+            this.cbGarantia.AutoSize = true;
+            this.cbGarantia.Location = new System.Drawing.Point(26, 69);
+            this.cbGarantia.Name = "cbGarantia";
+            this.cbGarantia.Size = new System.Drawing.Size(68, 17);
+            this.cbGarantia.TabIndex = 2;
+            this.cbGarantia.Text = "Garantía";
+            this.cbGarantia.UseVisualStyleBackColor = true;
             // 
             // cbEnvio
             // 
@@ -216,24 +182,65 @@
             this.cbEnvio.Text = "Envío";
             this.cbEnvio.UseVisualStyleBackColor = true;
             // 
-            // cbGarantia
+            // cbInstalacion
             // 
-            this.cbGarantia.AutoSize = true;
-            this.cbGarantia.Location = new System.Drawing.Point(26, 69);
-            this.cbGarantia.Name = "cbGarantia";
-            this.cbGarantia.Size = new System.Drawing.Size(68, 17);
-            this.cbGarantia.TabIndex = 2;
-            this.cbGarantia.Text = "Garantía";
-            this.cbGarantia.UseVisualStyleBackColor = true;
+            this.cbInstalacion.AutoSize = true;
+            this.cbInstalacion.Location = new System.Drawing.Point(26, 35);
+            this.cbInstalacion.Name = "cbInstalacion";
+            this.cbInstalacion.Size = new System.Drawing.Size(77, 17);
+            this.cbInstalacion.TabIndex = 0;
+            this.cbInstalacion.Text = "Instalación";
+            this.cbInstalacion.UseVisualStyleBackColor = true;
             // 
-            // btnSiguienteDos
+            // gbTipo
             // 
-            this.btnSiguienteDos.Location = new System.Drawing.Point(76, 257);
-            this.btnSiguienteDos.Name = "btnSiguienteDos";
-            this.btnSiguienteDos.Size = new System.Drawing.Size(158, 23);
-            this.btnSiguienteDos.TabIndex = 4;
-            this.btnSiguienteDos.Text = "Siguiente";
-            this.btnSiguienteDos.UseVisualStyleBackColor = true;
+            this.gbTipo.Controls.Add(this.cbEquipo);
+            this.gbTipo.Controls.Add(this.cbRepuesto);
+            this.gbTipo.Location = new System.Drawing.Point(32, 77);
+            this.gbTipo.Name = "gbTipo";
+            this.gbTipo.Size = new System.Drawing.Size(237, 52);
+            this.gbTipo.TabIndex = 2;
+            this.gbTipo.TabStop = false;
+            this.gbTipo.Text = "Tipo";
+            // 
+            // cbEquipo
+            // 
+            this.cbEquipo.AutoSize = true;
+            this.cbEquipo.Location = new System.Drawing.Point(122, 20);
+            this.cbEquipo.Name = "cbEquipo";
+            this.cbEquipo.Size = new System.Drawing.Size(59, 17);
+            this.cbEquipo.TabIndex = 1;
+            this.cbEquipo.Text = "Equipo";
+            this.cbEquipo.UseVisualStyleBackColor = true;
+            // 
+            // cbRepuesto
+            // 
+            this.cbRepuesto.AutoSize = true;
+            this.cbRepuesto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbRepuesto.Location = new System.Drawing.Point(26, 20);
+            this.cbRepuesto.Name = "cbRepuesto";
+            this.cbRepuesto.Size = new System.Drawing.Size(72, 17);
+            this.cbRepuesto.TabIndex = 0;
+            this.cbRepuesto.Text = "Repuesto";
+            this.cbRepuesto.UseVisualStyleBackColor = true;
+            // 
+            // cbProductos
+            // 
+            this.cbProductos.FormattingEnabled = true;
+            this.cbProductos.Location = new System.Drawing.Point(141, 28);
+            this.cbProductos.Name = "cbProductos";
+            this.cbProductos.Size = new System.Drawing.Size(128, 21);
+            this.cbProductos.TabIndex = 4;
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(28, 30);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(68, 20);
+            this.lblProducto.TabIndex = 0;
+            this.lblProducto.Text = "Producto";
             // 
             // frmCargaProducto
             // 
@@ -248,10 +255,10 @@
             this.gbProductos.PerformLayout();
             this.gbDos.ResumeLayout(false);
             this.gbDos.PerformLayout();
-            this.gbTipo.ResumeLayout(false);
-            this.gbTipo.PerformLayout();
             this.gbAdicional.ResumeLayout(false);
             this.gbAdicional.PerformLayout();
+            this.gbTipo.ResumeLayout(false);
+            this.gbTipo.PerformLayout();
             this.ResumeLayout(false);
 
         }

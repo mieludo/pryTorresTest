@@ -20,7 +20,15 @@ namespace pryTorresTest
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             frmCargaProducto ventanaProducto = new frmCargaProducto();
+
+            this.Hide();
+            
             ventanaProducto.ShowDialog();
+        }
+
+        private void pbLista_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
