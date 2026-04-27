@@ -19,9 +19,8 @@ namespace pryTorresTest
         }
         
         private void frmCargaProducto_Load(object sender, EventArgs e)
-        
-        
         {
+
 
         }
 
@@ -87,7 +86,18 @@ namespace pryTorresTest
                 return;
             }
 
-            
+            // Transfer items from the first list to the second group's combo box
+            cbProductos.Items.Clear();
+            foreach (var item in gbListaProductos.Items)
+            {
+                cbProductos.Items.Add(item);
+            }
+            if (cbProductos.Items.Count > 0)
+            {
+                cbProductos.SelectedIndex = 0;
+            }
+
+            // Show the second group box (it is left hidden initially in the designer)
             gbDos.Visible = true;
         }
         
@@ -109,7 +119,8 @@ namespace pryTorresTest
 
         private void frmCargaProducto_Load_1(object sender, EventArgs e)
         {
-
+            // Ensure the second group box starts hidden
+            gbDos.Visible = false;
         }
     }
 }

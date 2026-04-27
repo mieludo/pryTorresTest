@@ -94,6 +94,7 @@
             // 
             // gbListaProductos
             // 
+            this.gbListaProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gbListaProductos.FormattingEnabled = true;
             this.gbListaProductos.Location = new System.Drawing.Point(141, 112);
             this.gbListaProductos.Name = "gbListaProductos";
@@ -226,6 +227,7 @@
             // 
             // cbProductos
             // 
+            this.cbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProductos.FormattingEnabled = true;
             this.cbProductos.Location = new System.Drawing.Point(141, 28);
             this.cbProductos.Name = "cbProductos";
