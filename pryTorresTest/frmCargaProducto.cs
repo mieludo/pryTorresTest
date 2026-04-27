@@ -11,7 +11,6 @@ using System.Windows.Forms;
 namespace pryTorresTest
 {
     public partial class frmCargaProducto : Form
-    
     {
         public frmCargaProducto()
         {
@@ -104,7 +103,40 @@ namespace pryTorresTest
 
         private void btnSiguienteDos_Click(object sender, EventArgs e)
         {
-           
+           // Validate that a product is selected
+            if (cbProductos.Items.Count == 0)
+            {
+                MessageBox.Show("No hay productos para seleccionar.");
+                return;
+            }
+
+            // Build information string based on selections
+            var info = new StringBuilder();
+            info.AppendLine("Producto: " + (cbProductos.SelectedItem?.ToString() ?? string.Empty));
+
+            // Tipo
+            var tipos = new List<string>();
+            if (cbRepuesto.Checked) tipos.Add("Repuesto");
+            if (cbEquipo.Checked) tipos.Add("Equipo");
+            if (tipos.Count > 0)
+            {
+                info.AppendLine("Tipo: " + string.Join(", ", tipos));
+            }
+
+            // Adicionales
+            var adicionales = new List<string>();
+            if (cbInstalacion.Checked) adicionales.Add("Instalación");
+            if (cbEnvio.Checked) adicionales.Add("Envío");
+            if (cbGarantia.Checked) adicionales.Add("Garantía");
+            if (adicionales.Count > 0)
+            {
+                info.AppendLine("Adicional: " + string.Join(", ", adicionales));
+            }
+
+            // Open frmGrilla and set the label text
+            var grilla = new frmGrilla();
+            grilla.Informacion = info.ToString();
+            grilla.Show();
         }
 
         private void tbNombre1_TextChanged_1(object sender, EventArgs e)

@@ -16,5 +16,12 @@ namespace pryTorresTest
         {
             InitializeComponent();
         }
+
+        // Public property to allow other forms to set the information label
+        public string Informacion
+        {
+            get { return lblInformacion.Text; }
+            set { lblInformacion.Text = value; }
+        }
     }
 }
