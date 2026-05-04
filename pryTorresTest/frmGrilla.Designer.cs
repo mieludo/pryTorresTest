@@ -48,8 +48,10 @@
             this.ClientSize = new System.Drawing.Size(403, 367);
             this.Controls.Add(this.lblInformacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmGrilla";
             this.Text = "Grilla";
+            this.Load += new System.EventHandler(this.frmGrilla_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

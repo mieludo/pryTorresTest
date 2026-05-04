@@ -15,6 +15,10 @@ namespace pryTorresTest
         public frmCargaProducto()
         {
             InitializeComponent();
+
+            
+            cbRepuesto.CheckedChanged += Tipo_CheckedChanged;
+            cbEquipo.CheckedChanged += Tipo_CheckedChanged;
         }
         
         private void frmCargaProducto_Load(object sender, EventArgs e)
@@ -48,12 +52,16 @@ namespace pryTorresTest
             
             if (tbNombre1.Text == "")
             {
-                MessageBox.Show("Debe ingresar un producto.");
+                MessageBox.Show("Debe ingresar un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbNombre1.Focus();
                 return;
             }
 
             gbListaProductos.Items.Add(tbNombre1.Text);
+
+            // Confirmacion para registro exitoso
+            MessageBox.Show("Nombre registrado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             tbNombre1.Clear();
             tbNombre1.Focus();
         }
@@ -69,6 +77,10 @@ namespace pryTorresTest
             if (e.KeyChar == 13)
             { 
                 gbListaProductos.Items.Add(tbNombre1.Text);
+
+                //Confirmacion para registro exitoso con enter
+                MessageBox.Show("Nombre registrado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 tbNombre1.Clear();
                 tbNombre1.Focus();
                 return;
@@ -80,12 +92,12 @@ namespace pryTorresTest
             
             if (gbListaProductos.Items.Count == 0)
             {
-                MessageBox.Show("Debe ingresar al menos un producto.");
+                MessageBox.Show("Debe ingresar al menos un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbNombre1.Focus();
                 return;
             }
 
-            // Transfer items from the first list to the second group's combo box
+            
             cbProductos.Items.Clear();
             foreach (var item in gbListaProductos.Items)
             {
@@ -96,25 +108,25 @@ namespace pryTorresTest
                 cbProductos.SelectedIndex = 0;
             }
 
-            // Show the second group box (it is left hidden initially in the designer)
+
             gbDos.Visible = true;
         }
         
 
         private void btnSiguienteDos_Click(object sender, EventArgs e)
         {
-           // Validate that a product is selected
+           
             if (cbProductos.Items.Count == 0)
             {
-                MessageBox.Show("No hay productos para seleccionar.");
+                MessageBox.Show("No hay productos para seleccionar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Build information string based on selections
+            
             var info = new StringBuilder();
             info.AppendLine("Producto: " + (cbProductos.SelectedItem?.ToString() ?? string.Empty));
 
-            // Tipo
+            // Tipos
             var tipos = new List<string>();
             if (cbRepuesto.Checked) tipos.Add("Repuesto");
             if (cbEquipo.Checked) tipos.Add("Equipo");
@@ -133,7 +145,7 @@ namespace pryTorresTest
                 info.AppendLine("Adicional: " + string.Join(", ", adicionales));
             }
 
-            // Open frmGrilla and set the label text
+            
             var grilla = new frmGrilla();
             grilla.Informacion = info.ToString();
             grilla.Show();
@@ -151,8 +163,33 @@ namespace pryTorresTest
 
         private void frmCargaProducto_Load_1(object sender, EventArgs e)
         {
-            // Ensure the second group box starts hidden
+            
             gbDos.Visible = false;
+        }
+
+        private void gbTipo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void Tipo_CheckedChanged(object sender, EventArgs e)
+        {
+            var cb = sender as CheckBox;
+            if (cb == null) return;
+
+            
+            if (!cb.Checked) return;
+
+            
+            if (cb == cbRepuesto)
+            {
+                cbEquipo.Checked = false;
+            }
+            else if (cb == cbEquipo)
+            {
+                cbRepuesto.Checked = false;
+            }
         }
     }
 }

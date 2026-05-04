@@ -197,12 +197,13 @@
             // 
             this.gbTipo.Controls.Add(this.cbEquipo);
             this.gbTipo.Controls.Add(this.cbRepuesto);
-            this.gbTipo.Location = new System.Drawing.Point(32, 77);
+            this.gbTipo.Location = new System.Drawing.Point(32, 76);
             this.gbTipo.Name = "gbTipo";
             this.gbTipo.Size = new System.Drawing.Size(237, 52);
             this.gbTipo.TabIndex = 2;
             this.gbTipo.TabStop = false;
             this.gbTipo.Text = "Tipo";
+            this.gbTipo.Enter += new System.EventHandler(this.gbTipo_Enter);
             // 
             // cbEquipo
             // 
@@ -251,6 +252,7 @@
             this.Controls.Add(this.gbDos);
             this.Controls.Add(this.gbProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmCargaProducto";
             this.Text = "Carga Producto";
             this.Load += new System.EventHandler(this.frmCargaProducto_Load_1);
